@@ -3,6 +3,7 @@ package com.example.damproject2;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -22,24 +23,14 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    /**
-     * Método resetAllAtributes
-     */
-    public void resetAllAtributes (){
-        inputMail.setText("");
-        inputPassword.setText("");
-        inputPasswordRpt.setText("");
-        inputAlias.setText("");
-        inputEdad.setText("");
-        inputAltura.setText("");
-        inputPeso.setText("");
-    }
 
     /**
      * Atributos + arrays
@@ -59,7 +50,7 @@ public class RegisterActivity extends AppCompatActivity {
      private ArrayAdapter<String> adapterSexo;
      private ArrayAdapter<String> adapterActivity;
 
-     private FireBase db;
+     private FirebaseFirestore db;
      private FirebaseAuth mAuth;
 
 
@@ -96,7 +87,7 @@ public class RegisterActivity extends AppCompatActivity {
         btnSend = (Button) findViewById(R.id.btnRegister_register);
 
         mAuth = FirebaseAuth.getInstance();
-        db= new FireBase();
+        db= FirebaseFirestore.getInstance();
 
         /**
          * Asignación valores Spinners Sexo + Atividad
@@ -115,23 +106,59 @@ public class RegisterActivity extends AppCompatActivity {
         adapterActivity = new ArrayAdapter<String>(RegisterActivity.this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, listActivity);
         spinnerActivityLvl.setAdapter(adapterActivity);
 
-       /* @Override
-        public void onStart() {
-            super.onStart();
-            // Check if user is signed in (non-null) and update UI accordingly.
-            FirebaseUser currentUser = mAuth.getCurrentUser();
-            if(currentUser != null){
-                reload();
-            }
-        }*/
 
+        /**
+         * Spinner sexo item selected
+         */
+        spinnerSexo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                sexo = parent.getItemAtPosition(position).toString();
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+
+        });
+        /**
+         * Spinner activity level item selected
+         */
+        spinnerActivityLvl.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                activityLvl = parent.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+
+        });
         /**
          * Botón reset
          */
         btnReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                spinnerSexo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        //sexo = parent.getItemAtPosition(position).toString();
+                        sexo = parent.getItemAtPosition(position).toString();
+                        Toast.makeText(parent.getContext(), "Ha seleccionado: " + parent.getItemAtPosition(position), Toast.LENGTH_SHORT).show();
+                        System.out.println("BuenosDias" + sexo);
+                    }
 
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+
+                    }
+
+                });
                 resetAllAtributes();
             }
         });
@@ -169,31 +196,20 @@ public class RegisterActivity extends AppCompatActivity {
 
                 imc = peso / (altura*altura);
 
-                spinnerSexo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                        sexo = parent.getItemAtPosition(position).toString();
-                        System.out.println("--> " + sexo);
-                    }
 
-                    @Override
-                    public void onNothingSelected(AdapterView<?> parent) {
-
-                    }
-
-                });
-
-                //db.getDocumentID(mail);
-                Toast.makeText(RegisterActivity.this, "", Toast.LENGTH_SHORT).show();
-
-                if (mail.equals("") || password.equals("") || alias.equals("") || altura<1.20 || peso<30.00 || edad<=0 || !password.equals(passwordRepeat) ){
-                    if (mail.equals("")){
+                /**
+                 * Condicionales para evitar el incorrecto relleno de los datos
+                 */
+                if (mail.isEmpty() || password.isEmpty() || alias.isEmpty() || altura<1.20 || peso<30.00 || edad<=0 || !password.equals(passwordRepeat) || password.length()<6){
+                    if (mail.isEmpty()){
                         Toast.makeText(RegisterActivity.this, "El campo email esta vacío", Toast.LENGTH_SHORT).show();
-                    } else if (password.equals("")){
+                    } else if (password.isEmpty()){
                         Toast.makeText(RegisterActivity.this, "El campo contraseña esta vacío", Toast.LENGTH_SHORT).show();
                     } else if (!password.equals(passwordRepeat)){
                         Toast.makeText(RegisterActivity.this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();
-                    } else if (alias.equals("")){
+                    } else if (password.length()<6){
+                        Toast.makeText(RegisterActivity.this, "La contraseña no puede contener menos de 6 letras", Toast.LENGTH_SHORT).show();
+                    } else if (alias.isEmpty()){
                         Toast.makeText(RegisterActivity.this, "El campo alias esta vacío", Toast.LENGTH_SHORT).show();
                     } else if (altura<1.20) {
                         Toast.makeText(RegisterActivity.this, "La atura no puede ser menos de 120 cm", Toast.LENGTH_SHORT).show();
@@ -202,45 +218,84 @@ public class RegisterActivity extends AppCompatActivity {
                     } else if (edad<=0) {
                         Toast.makeText(RegisterActivity.this, "La edad no puede ser menor que 1", Toast.LENGTH_SHORT).show();
                     }
-                } /*else if (mail.equals(mail2)) {
-                    Toast.makeText(RegisterActivity.this, "El mail introducido ya esta registrado, por favor use otro", Toast.LENGTH_SHORT).show(); }*/
-                /*else {
+                }
+                /**
+                 * Si todos los datos son correctos pasamos a crear usuario
+                 */
+                else {
+                    registerUser(mail,password,alias,edad,altura,peso,imc,sexo,activityLvl);
+                }
 
-                mAuth.createUserWithEmailAndPassword(mail, password).addOnCompleteListener(new OnSuccessListener<AuthResult>() {
 
-                    public void onSuccess(AuthResult authResult){
 
-                        HashMap<String , Object> user = new HashMap<>();
-                        user.put("email" , mail);
-                        user.put("alias", alias);
-                        user.put("edad" , edad);
-                        user.put("id" , mAuth.getCurrentUser().getUid());
-                        user.put("altura" , altura);
-                        user.put("peso" , peso);
-                        user.put("imc", imc);
-                        user.put("sexo", "hombre");
-                        user.put("nivelActividad", "sedentario");
-
-                        mRootRef.child("usuarios").child(mAuth.getCurrentUser().getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccesful()) {
-
-                                }
-                            }
-                        });
-                    }
-
-                    }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-
-                    }
-                });
-
-                }*/
 
             }
         });
     }
+
+    /**
+     * Función registro ---> Introduce datos, en el usuario y en la base de datos.
+     * @param mail
+     * @param password
+     * @param alias
+     * @param edad
+     * @param altura
+     * @param peso
+     * @param imc
+     * @param sexo
+     * @param activityLvl
+     */
+    private void registerUser (String mail, String password, String alias, int edad, double altura, double peso, double imc, String sexo, String activityLvl){
+        mAuth.createUserWithEmailAndPassword(mail, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            //Obtenemos la id del usuario y registramos en un documento sus datos
+            public void onComplete(@NonNull Task<AuthResult> task){
+
+                String id = mAuth.getCurrentUser().getUid();
+                Map<String , Object> user = new HashMap<>();
+                user.put("email" , mail);
+                user.put("alias", alias);
+                user.put("edad" , edad);
+                user.put("id" , id);
+                user.put("altura" , altura);
+                user.put("peso" , peso);
+                user.put("imc", imc);
+                user.put("sexo", sexo);
+                user.put("nivelActividad", activityLvl);
+
+                db.collection("usuarios").document(id).set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        finish();
+                        startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                        Toast.makeText(RegisterActivity.this, "La cuenta a sido creada correctamente", Toast.LENGTH_SHORT).show();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(RegisterActivity.this, "Error, vuelva a intentarlo", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(RegisterActivity.this, "Error, vuelva a hacerlo", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+    /**
+     * Método resetAllAtributes
+     */
+    public void resetAllAtributes (){
+        inputMail.setText("");
+        inputPassword.setText("");
+        inputPasswordRpt.setText("");
+        inputAlias.setText("");
+        inputEdad.setText("");
+        inputAltura.setText("");
+        inputPeso.setText("");
+    }
+
 }
 

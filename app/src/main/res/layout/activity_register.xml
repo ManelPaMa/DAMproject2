@@ -145,6 +145,8 @@
 
             <Spinner
                 android:id="@+id/spinnerSexo_register"
+                android:spinnerMode="dialog"
+                android:prompt= "@string/seleccion_spinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -158,6 +160,8 @@
 
             <Spinner
                 android:id="@+id/spinnerActivityLevel_register"
+                android:spinnerMode="dialog"
+                android:prompt= "@string/seleccion_spinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 

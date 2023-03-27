@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DAMproject2</string>
+    <string name="seleccion_spinner">Seleccione una opción</string>
 </resources>
