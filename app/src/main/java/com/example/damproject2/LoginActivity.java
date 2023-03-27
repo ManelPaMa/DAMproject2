@@ -6,8 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.JsonReader;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,17 +18,8 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
-import com.google.firebase.ktx.Firebase;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     /**
      * Atributos pantalla login
@@ -53,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
         /**
          * Instanciación de atributos interfaz
          */
@@ -99,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         btnRegister_main.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent pasarPantalla = new Intent(MainActivity.this, RegisterActivity.class);
+                Intent pasarPantalla = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(pasarPantalla);
             }
         });
@@ -119,16 +108,16 @@ public class MainActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     finish();
-                    startActivity(new Intent(MainActivity.this, HomeActivity.class));
-                    Toast.makeText(MainActivity.this, "Inicio de sesión correcto", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                    Toast.makeText(LoginActivity.this, "Inicio de sesión correcto", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(MainActivity.this, "Error, los datos no son correctos", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Error, los datos no son correctos", Toast.LENGTH_SHORT).show();
                 }
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(MainActivity.this, "Los datos introducidos no son correctos", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Los datos introducidos no son correctos", Toast.LENGTH_SHORT).show();
             }
         });
     }
