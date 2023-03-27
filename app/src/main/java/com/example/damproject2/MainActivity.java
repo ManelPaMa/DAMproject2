@@ -1,21 +1,33 @@
 package com.example.damproject2;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.JsonReader;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.ktx.Firebase;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class MainActivity extends AppCompatActivity {
@@ -35,8 +47,7 @@ public class MainActivity extends AppCompatActivity {
     protected String mail;
     protected String password;
 
-    private FirebaseFirestore db;
-
+    private FirebaseAuth mAuth;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -55,7 +66,11 @@ public class MainActivity extends AppCompatActivity {
         btnRegister_main = (Button) findViewById(R.id.btnRegister_main);
         txtV3_main = (TextView) findViewById(R.id.textView3_main);
 
+        mAuth = FirebaseAuth.getInstance();
+
+
         this.setTitle("On your track LOGIN");
+
 
         /**
          * Actividad Botón Login == OK --> HomeActivity
@@ -68,17 +83,11 @@ public class MainActivity extends AppCompatActivity {
                 password = password_main.getText().toString();
 
 
-                /*if (mail.equals("mail") && password.equals("password")){
-                    Intent pasarPantalla= new Intent(MainActivity.this, HomeActivity.class);
-                    finish();
-                    startActivity(pasarPantalla);
-                }
-                else {
-                    mail_main.setText("");
-                    password_main.setText("");
-                    txtV3_main.setText("El email o la contraseña no son correctos");
+                if (mail.isEmpty() || password.isEmpty()){
 
-                }*/
+                } else {
+                    loginUser(mail,password);
+                }
 
 
 
@@ -97,5 +106,30 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+
+    /**
+     * Función para comprobar el login --> Busca usuario en FireBaseAUTH
+     * @param mail
+     * @param password
+     */
+    private void loginUser (String mail, String password){
+        mAuth.signInWithEmailAndPassword(mail,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    finish();
+                    startActivity(new Intent(MainActivity.this, HomeActivity.class));
+                    Toast.makeText(MainActivity.this, "Inicio de sesión correcto", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(MainActivity.this, "Error, los datos no son correctos", Toast.LENGTH_SHORT).show();
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(MainActivity.this, "Los datos introducidos no son correctos", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
