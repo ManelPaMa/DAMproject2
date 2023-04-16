@@ -262,6 +262,10 @@ public class RegisterActivity extends AppCompatActivity {
                 user.put("sexo", sexo);
                 user.put("nivelActividad", activityLvl);
 
+                Map<String,Object> alimentos = new HashMap<>();
+
+
+
                 db.collection("usuarios").document(id).set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
@@ -275,6 +279,7 @@ public class RegisterActivity extends AppCompatActivity {
                         Toast.makeText(RegisterActivity.this, "Error, vuelva a intentarlo", Toast.LENGTH_SHORT).show();
                     }
                 });
+
             }
 
         }).addOnFailureListener(new OnFailureListener() {

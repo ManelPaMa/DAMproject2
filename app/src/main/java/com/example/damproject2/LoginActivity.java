@@ -108,7 +108,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     finish();
-                    startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                    startActivity(new Intent(LoginActivity.this, AddFoodActivity.class));
                     Toast.makeText(LoginActivity.this, "Inicio de sesión correcto", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(LoginActivity.this, "Error, los datos no son correctos", Toast.LENGTH_SHORT).show();
