@@ -61,15 +61,7 @@ public class RegisterActivity extends AppCompatActivity {
         /**
          * Declaración atributos interfaz
          */
-        txtVMail = (TextView) findViewById(R.id.textViewEmail_register);
-        txtVPassword = (TextView) findViewById(R.id.textViewPassword_register);
-        txtVPasswordRpt = (TextView) findViewById(R.id.textViewRepeatPassword_register);
-        txtVAlias= (TextView) findViewById(R.id.textViewAlias_register);
-        txtVAltura = (TextView) findViewById(R.id.textViewAltura_register);
-        txtVPeso = (TextView) findViewById(R.id.textViewPeso_register);
-        txtVEdad = (TextView) findViewById(R.id.textViewEdad_register);
-        txtVSexo = (TextView) findViewById(R.id.textViewSexo_register);
-        txtVActivityLvl = (TextView) findViewById(R.id.textViewActivityLevel_register);
+
         txtVAlert = (TextView) findViewById(R.id.textViewAlert_register);
 
         inputMail = (EditText) findViewById(R.id.inputEmail_register);
@@ -90,7 +82,7 @@ public class RegisterActivity extends AppCompatActivity {
         db= FirebaseFirestore.getInstance();
 
         /**
-         * Asignación valores Spinners Sexo + Atividad
+         * Asignación valores Spinners Sexo + Actividad
          */
         listSexo = new ArrayList<>();
         listSexo.add("Hombre");

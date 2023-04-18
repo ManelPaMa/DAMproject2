@@ -47,7 +47,6 @@ public class LoginActivity extends AppCompatActivity {
          * Instanciación de atributos interfaz
          */
         image1_main = (ImageView) findViewById(R.id.imageView1_main);
-        txtV1_main = (TextView) findViewById(R.id.textView1_main);
         mail_main = (EditText) findViewById(R.id.inputMail_main);
         password_main = (EditText) findViewById(R.id.inputPassword_main);
         btnLogin_main = (Button) findViewById(R.id.btnLogin_main);
