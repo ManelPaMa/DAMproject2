@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InicioActivity">
+
+    <EditText
+        android:id="@+id/caja1_entrenamientos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="24dp"
+        android:ems="10"
+        android:hint="Introduce deporte deseado"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/boton_entrenamiento_seleccionado_entrenamientos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="#673AB7"
+        android:text="entrenamiento deporte seleccionado"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/caja1_entrenamientos" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="1000dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boton_entrenamiento_seleccionado_entrenamientos">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="32dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/boton_escalada_entrenamientos"
+                    android:layout_width="100dp"
+                    android:layout_height="110dp"
+                    android:layout_weight="1"
+                    android:text="escalada" />
+
+                <Button
+                    android:id="@+id/boton_crossfit_entrenamientos"
+                    android:layout_width="100dp"
+                    android:layout_height="110dp"
+                    android:layout_weight="1"
+                    android:text="crossfit" />
+
+                <Button
+                    android:id="@+id/boton_remo_entrenamientos"
+                    android:layout_width="100dp"
+                    android:layout_height="110dp"
+                    android:layout_weight="1"
+                    android:text="remo" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="32dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/boton_padel_entrenamientos"
+                    android:layout_width="100dp"
+                    android:layout_height="110dp"
+                    android:layout_weight="1"
+                    android:text="padel" />
+
+                <Button
+                    android:id="@+id/boton_tenis_entrenamientos"
+                    android:layout_width="100dp"
+                    android:layout_height="110dp"
+                    android:layout_weight="1"
+                    android:text="tenis" />
+
+                <Button
+                    android:id="@+id/boton_palas_entrenamientos"
+                    android:layout_width="100dp"
+                    android:layout_height="110dp"
+                    android:layout_weight="1"
+                    android:text="palas" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="32dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/boton_natacion_entrenamientos"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_weight="1"
+                    android:text="natación" />
+
+                <Button
+                    android:id="@+id/boton_gimnasio_entrenamientos"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_weight="1"
+                    android:text="gimnasio" />
+
+                <Button
+                    android:id="@+id/boton_skate_entrenamientos"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_weight="1"
+                    android:text="skate" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="32dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/boton_correr_pista_entrenamientos"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    android:text="correr pista" />
+
+                <Button
+                    android:id="@+id/boton_correr_monte_entrenamientos"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    android:text="correr monte" />
+
+                <Button
+                    android:id="@+id/boton_trx_entrenamientos"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_weight="1"
+                    android:text="trx" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="32dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/boton_ciclismo_monte_entrenamientos"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_weight="1"
+                    android:text="ciclismo monte" />
+
+                <Button
+                    android:id="@+id/boton_ciclismo_entrenamientos"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_weight="1"
+                    android:text="ciclismo" />
+
+                <Button
+                    android:id="@+id/boton_barrenar_entrenamientos"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_weight="1"
+                    android:text="barrenar" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="32dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/boton_surf_entrenamientos"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_weight="1"
+                    android:text="surf" />
+
+                <Button
+                    android:id="@+id/boton_patinaje_entrenamientos"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_weight="1"
+                    android:text="patinaje" />
+
+                <Button
+                    android:id="@+id/boton_triatlon_entrenamientos"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_weight="1"
+                    android:text="triatlon" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/boton_volver_entrenamientos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginRight="16dp"
+                android:text="volver" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

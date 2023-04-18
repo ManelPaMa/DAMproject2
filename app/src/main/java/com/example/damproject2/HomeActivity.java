@@ -65,6 +65,14 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        btn4_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent pasarPantalla = new Intent(HomeActivity.this, InicioEntrenos.class);
+                startActivity(pasarPantalla);
+            }
+        });
+
 
     }
 

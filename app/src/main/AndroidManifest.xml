@@ -24,8 +24,26 @@
             android:name=".HomeActivity"
             android:exported="false" />
         <activity
+            android:name=".RegistrarEntrenamientoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegistroEntrenamientosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EntrenamientoDatosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EntrenamientosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegistroEntrenamientosDatosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".InicioEntrenos"
+            android:exported="false"/>
+        <activity
             android:name=".LoginActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

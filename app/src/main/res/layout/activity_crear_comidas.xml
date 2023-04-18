@@ -2,8 +2,73 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/listVComida_crearComida"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CrearComidasActivity">
 
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtV1_crearComidas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Barra calorias diaria" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="32dp" />
+
+            <TextView
+                android:id="@+id/txtV2_crearComida"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:text="Lista alimentos"
+                android:textSize="20sp" />
+
+            <Spinner
+                android:id="@+id/spinnerComida_crearComida"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ListView
+                android:id="@+id/listVFood_crearComida"
+                android:layout_width="match_parent"
+                android:layout_height="203dp" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+
+            <TextView
+                android:id="@+id/txtV3_crearComida"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:text="Comida"
+                android:textSize="20sp" />
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="333dp" />
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
