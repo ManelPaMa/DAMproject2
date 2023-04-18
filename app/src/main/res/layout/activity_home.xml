@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".HomeActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView1_home"
+                android:layout_width="138dp"
+                android:layout_height="123dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/appicon" />
+
+            <TextView
+                android:id="@+id/textView1_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="HOY"
+                android:textColor="@color/black"
+                android:textSize="34sp"
+                app:layout_constraintEnd_toStartOf="@+id/button2_home"
+                app:layout_constraintStart_toEndOf="@+id/button1_home"
+                app:layout_constraintTop_toBottomOf="@+id/imageView1_home" />
+
+            <Button
+                android:id="@+id/button1_home"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/back_black"
+                android:contentDescription="@string/app_name"
+                app:layout_constraintEnd_toStartOf="@+id/textView1_home"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView1_home" />
+
+            <Button
+                android:id="@+id/button2_home"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/forward_black"
+                android:contentDescription="@string/app_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView1_home"
+                app:layout_constraintTop_toBottomOf="@+id/imageView1_home" />
+
+            <ProgressBar
+                android:id="@+id/progressBar1_home"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="225dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView1_home" />
+
+            <TextView
+                android:id="@+id/textView2_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2000/2000"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/progressBar1_home" />
+
+            <TextView
+                android:id="@+id/textView3_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Comidas"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2_home" />
+
+            <Button
+                android:id="@+id/button3_home"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/add_black"
+                android:contentDescription="@string/app_name"
+                app:layout_constraintBottom_toTopOf="@+id/recyclerView1_home"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.25"
+                app:layout_constraintStart_toEndOf="@+id/textView3_home"
+                app:layout_constraintTop_toBottomOf="@+id/textView2_home" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView1_home"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3_home" />
+
+            <TextView
+                android:id="@+id/textView4_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Ejercicios"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerView1_home" />
+
+            <Button
+                android:id="@+id/button4_home"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/add_black"
+                android:contentDescription="@string/app_name"
+                app:layout_constraintBottom_toTopOf="@+id/recyclerView2_home"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.25"
+                app:layout_constraintStart_toEndOf="@+id/textView4_home"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerView1_home" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView2_home"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView4_home" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

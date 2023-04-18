@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".RegisterActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView1_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="REGISTRO"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="34sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/inputAlias_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="32dp"
+                android:background="#90ffffff"
+                android:drawableLeft="@drawable/user_black"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Nombre"
+                android:inputType="textPersonName"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView1_register" />
+
+            <EditText
+                android:id="@+id/inputEmail_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="32dp"
+                android:background="#90ffffff"
+                android:drawableLeft="@drawable/email_black"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputAlias_register" />
+
+            <EditText
+                android:id="@+id/inputPassword_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="32dp"
+                android:background="#90ffffff"
+                android:drawableLeft="@drawable/key_black"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Contraseña"
+                android:inputType="textPassword"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputEmail_register" />
+
+            <EditText
+                android:id="@+id/inputRepeatPassword_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="32dp"
+                android:background="#90ffffff"
+                android:drawableLeft="@drawable/key_off_black"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Confirmar contraseña"
+                android:inputType="textPassword"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputPassword_register" />
+
+            <EditText
+                android:id="@+id/inputEdad_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="32dp"
+                android:background="#90ffffff"
+                android:drawableLeft="@drawable/cake_black"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Edad"
+                android:inputType="number"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputRepeatPassword_register" />
+
+            <EditText
+                android:id="@+id/inputAltura_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="32dp"
+                android:background="#90ffffff"
+                android:drawableLeft="@drawable/height_black"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Altura (En metros, 0.00)"
+                android:inputType="numberDecimal"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputEdad_register" />
+
+            <EditText
+                android:id="@+id/inputPeso_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="32dp"
+                android:background="#90ffffff"
+                android:drawableLeft="@drawable/weight_black"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Peso (En kg, 00.00)"
+                android:inputType="numberDecimal"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputAltura_register" />
+
+            <TextView
+                android:id="@+id/textView2_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="48dp"
+                android:layout_marginBottom="12dp"
+                android:text="Sexo"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/spinnerActivityLevel_register"
+                app:layout_constraintEnd_toStartOf="@+id/spinnerSexo_register"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputPeso_register" />
+
+            <TextView
+                android:id="@+id/textView3_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="12dp"
+                android:text="Actividad"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/textViewAlert_register"
+                app:layout_constraintEnd_toStartOf="@+id/spinnerActivityLevel_register"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spinnerSexo_register" />
+
+            <Spinner
+                android:id="@+id/spinnerSexo_register"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="32dp"
+                android:contentDescription="@string/app_name"
+                android:prompt="@string/seleccion_spinner"
+                android:spinnerMode="dropdown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView2_register"
+                app:layout_constraintTop_toBottomOf="@+id/inputPeso_register" />
+
+            <Spinner
+                android:id="@+id/spinnerActivityLevel_register"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="32dp"
+                android:contentDescription="@string/app_name"
+                android:prompt="@string/seleccion_spinner"
+                android:spinnerMode="dropdown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView3_register"
+                app:layout_constraintTop_toBottomOf="@+id/spinnerSexo_register" />
+
+            <Button
+                android:id="@+id/btnRegister_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="64dp"
+                android:background="@drawable/button_style1"
+                android:text="Crear nueva cuenta"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewAlert_register" />
+
+            <Button
+                android:id="@+id/btnReset_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/button_style2"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="Reiniciar campos"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnRegister_register" />
+
+            <TextView
+                android:id="@+id/textViewAlert_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:textAlignment="center"
+                android:textColor="#FF0000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spinnerActivityLevel_register" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
