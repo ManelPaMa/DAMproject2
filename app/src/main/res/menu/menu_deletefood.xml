@@ -2,9 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/menuItem0_addFood"
-        android:title="Borrar alimento" />
+        android:id="@+id/menuItem1_deleteFood"
+        android:title="Borrar todos los alimentos" />
     <item
-        android:id="@+id/menuItem1_addFood"
+        android:id="@+id/menuItem2_deleteFood"
         android:title="Volver" />
 </menu>

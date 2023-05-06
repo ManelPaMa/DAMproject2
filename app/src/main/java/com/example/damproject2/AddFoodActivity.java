@@ -238,16 +238,22 @@ public class AddFoodActivity extends AppCompatActivity {
     }
 
     /**
-     * Item CONFIG menú == Return homeActivity
+     * Item CONFIG menú == Return homeActivity or Go to DeleteFoodActivity
      */
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
 
+            case R.id.menuItem0_addFood:
+
+                Intent pasarPantalla = new Intent(AddFoodActivity.this, DeleteFoodActivity.class);
+                startActivity(pasarPantalla);
+
+                return true;
 
             case R.id.menuItem1_addFood:
 
-                Intent pasarPantalla = new Intent(AddFoodActivity.this, HomeActivity.class);
+                pasarPantalla = new Intent(AddFoodActivity.this, HomeActivity.class);
                 startActivity(pasarPantalla);
 
                 return true;
