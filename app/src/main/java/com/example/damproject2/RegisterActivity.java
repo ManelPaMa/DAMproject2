@@ -145,7 +145,6 @@ public class RegisterActivity extends AppCompatActivity {
                         //sexo = parent.getItemAtPosition(position).toString();
                         sexo = parent.getItemAtPosition(position).toString();
                         Toast.makeText(parent.getContext(), "Ha seleccionado: " + parent.getItemAtPosition(position), Toast.LENGTH_SHORT).show();
-                        System.out.println("BuenosDias" + sexo);
                     }
 
                     @Override
@@ -159,7 +158,6 @@ public class RegisterActivity extends AppCompatActivity {
         });
         /**
          * Botón send --> Almacenar info All editText + comprobar que es correcta --> Crear un archivo DataBase con la info
-         * (EN CONSTRUCCIÓN)
          */
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -12,8 +12,11 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,14 +33,16 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class AddFoodActivity extends AppCompatActivity {
 
     //Variables interfaz gráfica
-    protected TextView txt1_addFood;
-    protected EditText inputName_addFood, inputCalories_addFood, inputType_addFood;
+    protected TextView txt1_addFood, txt2_addFood;
+    protected EditText inputName_addFood, inputCalories_addFood;
+    protected Spinner spinnerType_addFood;
     protected Button btnSend_addFood;
 
     //Variables clase
@@ -47,6 +52,9 @@ public class AddFoodActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseUser fUser;
     private Alimento food1;
+
+    private ArrayList<String> spinnerTipo;
+    private ArrayAdapter<String> adapterSpinnerType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,10 +70,42 @@ public class AddFoodActivity extends AppCompatActivity {
 
         //Instancia interfaz
         txt1_addFood = (TextView) findViewById(R.id.txtV1_addFood);
+        txt2_addFood = (TextView) findViewById(R.id.txtV2_addFood);
         inputName_addFood = (EditText) findViewById(R.id.inputName_addFood);
         inputCalories_addFood = (EditText) findViewById(R.id.inputCalories_addFood);
-        inputType_addFood = (EditText) findViewById(R.id.inputType_addFood);
+        spinnerType_addFood = (Spinner) findViewById(R.id.spinner1_addFood);
         btnSend_addFood = (Button) findViewById(R.id.btnCreate_addFood);
+
+        /**
+         * Asignación valores Spinner Type Food
+         */
+        spinnerTipo = new ArrayList<>();
+        spinnerTipo.add("Carne");
+        spinnerTipo.add("Pescado");
+        spinnerTipo.add("Láctico");
+        spinnerTipo.add("Fruta");
+        spinnerTipo.add("Verdura");
+        spinnerTipo.add("Cereales");
+        spinnerTipo.add("Otro");
+
+        adapterSpinnerType = new ArrayAdapter<String>(AddFoodActivity.this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, spinnerTipo);
+        spinnerType_addFood.setAdapter(adapterSpinnerType);
+
+        /**
+         * Spinner TypeFood item selected
+         */
+        spinnerType_addFood.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                typeFood = parent.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+
+        });
 
         /**
          * Button crear alimento ---> Registra un alimento en la base de datos particular del usuario
@@ -74,7 +114,7 @@ public class AddFoodActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 nameFood = inputName_addFood.getText().toString();
-                typeFood = inputType_addFood.getText().toString();
+
 
                 try{
                     calories = Integer.parseInt(inputCalories_addFood.getText().toString());

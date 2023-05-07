@@ -60,37 +60,47 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputName_addFood" />
 
+    <Spinner
+        android:id="@+id/spinner1_addFood"
+        android:layout_width="181dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:contentDescription="@string/app_name"
+        android:prompt="@string/seleccion_spinner"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputCalories_addFood" />
+
     <Button
         android:id="@+id/btnCreate_addFood"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="64dp"
+        android:layout_marginBottom="180dp"
         android:text="Añadir"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputType_addFood"
-        app:layout_constraintVertical_bias="0.189" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner1_addFood" />
 
-    <EditText
-        android:id="@+id/inputType_addFood"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+    <TextView
+        android:id="@+id/txtV2_addFood"
+        android:layout_width="138dp"
+        android:layout_height="58dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
-        android:ems="10"
-        android:hint="Tipo de alimento"
-        android:inputType="textPersonName"
-        android:textColor="@color/black"
-        android:padding="15dp"
-        android:background="#90ffffff"
-        android:drawableLeft="@drawable/graph_black"
-        android:drawablePadding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Tipo de alimento"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/spinner1_addFood"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputCalories_addFood" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
