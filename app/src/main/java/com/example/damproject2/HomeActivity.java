@@ -3,6 +3,8 @@ package com.example.damproject2;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -32,6 +34,9 @@ public class HomeActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseUser fUser;
 
+    private Date dateToday = new Date();
+    private String fecha;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +61,8 @@ public class HomeActivity extends AppCompatActivity {
         image1_home = (ImageView) findViewById(R.id.imageView1_home);
         progress1_home = (ProgressBar) findViewById(R.id.progressBar1_home);
 
+        fecha = new SimpleDateFormat("dd-MM-yyyy").format(dateToday);
+        txtV1_home.setText(fecha);
         // Button to CrearComidas
         btn3_home.setOnClickListener(new View.OnClickListener() {
             @Override
