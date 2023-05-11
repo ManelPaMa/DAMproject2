@@ -9,12 +9,11 @@
     tools:context=".CrearComidasActivity">
 
     <ScrollView
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="150dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="62dp"
+        android:layout_marginEnd="32dp"
         android:background="@color/background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,9 +29,10 @@
                 android:id="@+id/txtV1_crearComidas"
                 android:layout_width="match_parent"
                 android:layout_height="46dp"
-                android:text="Calorías diarias : "
-                android:textColor="#000000"
-                android:textSize="20sp" />
+                android:text="Calorías diarias"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
 
             <ProgressBar
                 android:id="@+id/progressCalories_crearComida"
@@ -45,8 +45,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="33dp"
                 android:text="Lista alimentos"
-                android:textColor="#000000"
-                android:textSize="20sp" />
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -59,6 +60,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="Tipo de alimento"
+                    android:textAlignment="center"
                     android:textColor="#000000" />
 
                 <Spinner
