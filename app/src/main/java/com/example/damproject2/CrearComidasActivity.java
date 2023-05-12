@@ -87,7 +87,7 @@ public class CrearComidasActivity extends AppCompatActivity {
         fechaHome = getIntent().getExtras();
         fecha = fechaHome.getString("fecha");
 
-        txt1_crearComidas.setText(fecha + " Calorías Diarias");
+        txt1_crearComidas.setText(fecha + " Comida diaria");
         addDataDocument(fecha);
 
         //Array tipos comida ---> use in single Dialog

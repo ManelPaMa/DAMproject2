@@ -86,21 +86,6 @@ public class HomeActivity extends AppCompatActivity {
         txtV1_home.setText(fecha);
 
 
-            AlertDialog.Builder alert = new AlertDialog.Builder(HomeActivity.this);
-            alert.setMessage("¡¡Bienvenid@ de nuevo, que tengas un buen día!!")
-                    .setCancelable(false).setPositiveButton("Ir al menú", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-
-
-                        }
-                    });
-
-            AlertDialog title = alert.create();
-            title.setTitle("Mensaje");
-            title.show();
-
-
         //Mover la fecha dia -1
         btn1_home.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -119,7 +104,9 @@ public class HomeActivity extends AppCompatActivity {
             txtV1_home.setText(fecha);
             }
         });
-        // Button to CrearComidas
+        /**
+         * Button intent to comidas
+         */
         btn3_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -129,6 +116,9 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Button intent to entrenos
+         */
         btn4_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -137,6 +127,9 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Button intent to AddFood
+         */
         btn5_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -144,6 +137,9 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(pasarPantalla);
             }
         });
+        /**
+         * Button intent to EditUser
+         */
         btn6_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

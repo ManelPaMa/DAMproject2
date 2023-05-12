@@ -1,9 +1,11 @@
 package com.example.damproject2;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -61,6 +63,21 @@ public class LoginActivity extends AppCompatActivity {
 
         this.setTitle("On your track LOGIN");
 
+        AlertDialog.Builder alert = new AlertDialog.Builder(LoginActivity.this);
+        alert.setMessage("¡¡Bienvenid@ de nuevo, que tengas un buen día!!")
+                .setCancelable(false).setPositiveButton("Ir al Login", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+
+                    }
+                });
+
+        AlertDialog title = alert.create();
+        title.setTitle("Mensaje");
+        title.show();
+
+
 
         /**
          * Actividad Botón Login == OK --> HomeActivity
@@ -111,6 +128,7 @@ public class LoginActivity extends AppCompatActivity {
                     finish();
                     startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                     Toast.makeText(LoginActivity.this, "Inicio de sesión correcto", Toast.LENGTH_SHORT).show();
+
                 } else {
                     Toast.makeText(LoginActivity.this, "Error, los datos no son correctos", Toast.LENGTH_SHORT).show();
                 }

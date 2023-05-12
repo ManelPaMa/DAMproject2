@@ -24,144 +24,139 @@
                 android:text="Modificar datos usuario"
                 android:textAlignment="center"
                 android:textColor="#000000"
-                android:textSize="34sp"
+                android:textSize="28sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
-                android:id="@+id/alias_editUser"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="32dp"
-                android:background="#90ffffff"
-                android:drawableLeft="@drawable/user_black"
-                android:drawablePadding="10dp"
-                android:ems="10"
-                android:hint="Nombre"
-                android:inputType="textPersonName"
-                android:padding="15dp"
-                android:textColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView1_register" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/mail_editUser"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="32dp"
-                android:background="#90ffffff"
-                android:drawableLeft="@drawable/email_black"
-                android:drawablePadding="10dp"
-                android:editable="false"
-                android:ems="10"
-                android:hint="Email"
-                android:inputType="textEmailAddress"
-                android:padding="15dp"
-                android:textColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inputAlias_register" />
+                <Switch
+                    android:id="@+id/switch1_editUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="66dp"
+                    android:layout_weight="1"
+                    android:textAlignment="textStart" />
 
-            <EditText
-                android:id="@+id/oldPassword_editUser"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="32dp"
-                android:background="#90ffffff"
-                android:drawableLeft="@drawable/key_black"
-                android:drawablePadding="10dp"
-                android:ems="10"
-                android:hint="Contraseña actual"
-                android:inputType="textPassword"
-                android:padding="15dp"
-                android:textColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inputEmail_register" />
+                <EditText
+                    android:id="@+id/alias_editUser"
+                    android:layout_width="298dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="#90ffffff"
+                    android:drawableLeft="@drawable/user_black"
+                    android:drawablePadding="10dp"
+                    android:ems="10"
+                    android:hint="Nombre"
+                    android:inputType="textPersonName"
+                    android:padding="15dp"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView1_register" />
 
-            <EditText
-                android:id="@+id/newPassword_editUSer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="32dp"
-                android:background="#90ffffff"
-                android:drawableLeft="@drawable/key_off_black"
-                android:drawablePadding="10dp"
-                android:ems="10"
-                android:hint="Contraseña Nueva"
-                android:inputType="textPassword"
-                android:padding="15dp"
-                android:textColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inputPassword_register" />
+            </LinearLayout>
 
-            <EditText
-                android:id="@+id/edad_editUser"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="32dp"
-                android:background="#90ffffff"
-                android:drawableLeft="@drawable/cake_black"
-                android:drawablePadding="10dp"
-                android:ems="10"
-                android:hint="Edad"
-                android:inputType="number"
-                android:padding="15dp"
-                android:textColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inputRepeatPassword_register" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/altura_editUser"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="32dp"
-                android:background="#90ffffff"
-                android:drawableLeft="@drawable/height_black"
-                android:drawablePadding="10dp"
-                android:ems="10"
-                android:hint="Altura (En metros, 0.00)"
-                android:inputType="numberDecimal"
-                android:padding="15dp"
-                android:textColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inputEdad_register" />
+                <Switch
+                    android:id="@+id/switch3_editUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="66dp"
+                    android:layout_weight="1"
+                    android:textAlignment="textStart" />
 
-            <EditText
-                android:id="@+id/peso_editUser"
+                <EditText
+                    android:id="@+id/edad_editUser"
+                    android:layout_width="298dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="#90ffffff"
+                    android:drawableLeft="@drawable/cake_black"
+                    android:drawablePadding="10dp"
+                    android:ems="10"
+                    android:hint="Edad"
+                    android:inputType="number"
+                    android:padding="15dp"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/inputRepeatPassword_register" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="32dp"
-                android:background="#90ffffff"
-                android:drawableLeft="@drawable/weight_black"
-                android:drawablePadding="10dp"
-                android:ems="10"
-                android:hint="Peso (En kg, 00.00)"
-                android:inputType="numberDecimal"
-                android:padding="15dp"
-                android:textColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inputAltura_register" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Switch
+                    android:id="@+id/switch4_editUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="66dp"
+                    android:layout_weight="1"
+                    android:textAlignment="textStart" />
+
+                <EditText
+                    android:id="@+id/altura_editUser"
+                    android:layout_width="298dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="#90ffffff"
+                    android:drawableLeft="@drawable/height_black"
+                    android:drawablePadding="10dp"
+                    android:ems="10"
+                    android:hint="Altura (En metros, 0.00)"
+                    android:inputType="numberDecimal"
+                    android:padding="15dp"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/inputEdad_register" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Switch
+                    android:id="@+id/switch5_editUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="66dp"
+                    android:layout_weight="1"
+                    android:textAlignment="textStart" />
+
+                <EditText
+                    android:id="@+id/peso_editUser"
+                    android:layout_width="298dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="#90ffffff"
+                    android:drawableLeft="@drawable/weight_black"
+                    android:drawablePadding="10dp"
+                    android:ems="10"
+                    android:hint="Peso (En kg, 00.00)"
+                    android:inputType="numberDecimal"
+                    android:padding="15dp"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/inputAltura_register" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -246,6 +241,94 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textViewAlert_register" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtV2_editUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Modificar Contraseña"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="28sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Switch
+                    android:id="@+id/switch2_editUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="66dp"
+                    android:layout_weight="1"
+                    android:textAlignment="textStart" />
+
+                <EditText
+                    android:id="@+id/oldPassword_editUser"
+                    android:layout_width="298dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="#90ffffff"
+                    android:drawableLeft="@drawable/key_black"
+                    android:drawablePadding="10dp"
+                    android:ems="10"
+                    android:hint="Contraseña actual"
+                    android:inputType="textPassword"
+                    android:padding="15dp"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/inputEmail_register" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/newPassword_editUSer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="32dp"
+                android:background="#90ffffff"
+                android:drawableLeft="@drawable/key_off_black"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Contraseña Nueva (min 6 digitos)"
+                android:inputType="textPassword"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputPassword_register" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnChangePass_editUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="64dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="64dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_style1"
+                    android:text="Cambiar Contraseña"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewAlert_register" />
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>

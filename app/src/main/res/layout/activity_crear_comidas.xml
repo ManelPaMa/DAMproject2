@@ -30,7 +30,7 @@
                 android:id="@+id/txtV1_crearComidas"
                 android:layout_width="match_parent"
                 android:layout_height="46dp"
-                android:text="Calorías diarias : "
+                android:text="Comida diaria : "
                 android:textColor="#000000"
                 android:textSize="20sp" />
 
