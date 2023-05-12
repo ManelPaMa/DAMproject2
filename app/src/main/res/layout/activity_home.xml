@@ -30,7 +30,7 @@
                 android:id="@+id/imageView1_home"
                 android:layout_width="138dp"
                 android:layout_height="123dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="4dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
@@ -93,73 +93,63 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/progressBar1_home" />
 
-            <TextView
-                android:id="@+id/textView3_home"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Comidas"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView2_home" />
-
             <Button
                 android:id="@+id/button3_home"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:background="@drawable/add_black"
-                android:contentDescription="@string/app_name"
-                app:layout_constraintBottom_toTopOf="@+id/recyclerView1_home"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.25"
-                app:layout_constraintStart_toEndOf="@+id/textView3_home"
-                app:layout_constraintTop_toBottomOf="@+id/textView2_home" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView1_home"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView3_home" />
-
-            <TextView
-                android:id="@+id/textView4_home"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="72dp"
                 android:layout_marginTop="16dp"
-                android:text="Ejercicios"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/recyclerView1_home" />
-
-            <Button
-                android:id="@+id/button4_home"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:background="@drawable/add_black"
-                android:contentDescription="@string/app_name"
-                app:layout_constraintBottom_toTopOf="@+id/recyclerView2_home"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.25"
-                app:layout_constraintStart_toEndOf="@+id/textView4_home"
-                app:layout_constraintTop_toBottomOf="@+id/recyclerView1_home" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView2_home"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="8dp"
+                android:layout_marginEnd="72dp"
+                android:background="@drawable/button_style2"
+                android:text="Crear Comidas"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView4_home" />
+                app:layout_constraintTop_toBottomOf="@+id/textView2_home" />
+
+            <Button
+                android:id="@+id/button4_home"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="72dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="72dp"
+                android:background="@drawable/button_style2"
+                android:text="Crear Entrenamientos"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button3_home" />
+
+            <Button
+                android:id="@+id/button5_home"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="72dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="72dp"
+                android:background="@drawable/button_style2"
+                android:text="Añadir alimentos"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button4_home" />
+
+            <Button
+                android:id="@+id/button6_home"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="72dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="72dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/button_style2"
+                android:text="Editar Usuario"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button5_home" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

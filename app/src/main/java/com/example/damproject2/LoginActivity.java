@@ -74,7 +74,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
                 if (mail.isEmpty() || password.isEmpty()){
-
+                    Toast.makeText(LoginActivity.this, "Las cajas de text están vacías", Toast.LENGTH_SHORT).show();
                 } else {
                     loginUser(mail,password);
                 }

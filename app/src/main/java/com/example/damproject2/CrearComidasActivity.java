@@ -50,6 +50,7 @@ public class CrearComidasActivity extends AppCompatActivity {
     private Date dateToday = new Date();
     private String fecha, user, typeFood , nameFood, comida, typeMeal;
     private int calories, sumaCalorias;
+    private Bundle fechaHome;
 
     protected ArrayList<Alimento> foodData, mealContent;
 
@@ -83,7 +84,9 @@ public class CrearComidasActivity extends AppCompatActivity {
         spinnerTypeMeal_crearComidas = (Spinner) findViewById(R.id.spinnerTypeComida_crearComida);
         bar1_crearComidas = (ProgressBar) findViewById(R.id.progressCalories_crearComida);
 
-        fecha = new SimpleDateFormat("dd-MM-yyyy").format(dateToday);
+        fechaHome = getIntent().getExtras();
+        fecha = fechaHome.getString("fecha");
+
         txt1_crearComidas.setText(fecha + " Calorías Diarias");
         addDataDocument(fecha);
 
@@ -553,6 +556,7 @@ public class CrearComidasActivity extends AppCompatActivity {
 
                 Intent pasarPantalla = new Intent(CrearComidasActivity.this, HomeActivity.class);
                 startActivity(pasarPantalla);
+                this.finish();
 
                 return true;
 
