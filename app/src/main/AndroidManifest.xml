@@ -36,9 +36,6 @@
             android:name=".RegistroEntrenamientosActivity"
             android:exported="false" />
         <activity
-            android:name=".RegistroEntrenamientosDatosActivity"
-            android:exported="false" />
-        <activity
             android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
