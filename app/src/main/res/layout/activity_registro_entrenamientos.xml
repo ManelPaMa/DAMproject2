@@ -8,20 +8,19 @@
     tools:context=".RegistroEntrenamientosActivity">
 
     <Button
-        android:id="@+id/boton_entrenamientos_todos_registro_entrenamientos"
+        android:id="@+id/boton_ver_registro_entrenamientos"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
         android:layout_marginEnd="24dp"
-        android:text="ver todos los entrenamientos"
+        android:layout_marginBottom="32dp"
+        android:text="ver registros anteriores"
         android:textColor="@color/white"
         android:textSize="16sp"
-        app:backgroundTint="#673AB7"
+        app:layout_constraintBottom_toTopOf="@+id/boton_registrar_registro_entrenamientos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/boton_entrenamientos_anteriores_registro_entrenamientos" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/boton_registrar_registro_entrenamientos"
@@ -29,49 +28,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
+        android:layout_marginBottom="32dp"
         android:text="Registrar entrenamiento"
         android:textColor="@color/white"
         android:textSize="16sp"
-        app:backgroundTint="#673AB7"
+        app:layout_constraintBottom_toTopOf="@+id/boton_volver_registro_entrenamientos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="573dp" />
-
-    <EditText
-        android:id="@+id/caja1_registro_entrenamientos"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Fecha registro entrenamiento"
-        android:inputType="date"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/boton_entrenamientos_anteriores_registro_entrenamientos"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="24dp"
-        android:text="entrenamientos anteriores"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        app:backgroundTint="#673AB7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/caja1_registro_entrenamientos" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/boton_volver_registro_entrenamientos"
@@ -84,4 +48,34 @@
         app:backgroundTint="#673AB7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/label1_registro_entrenamientos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="24dp"
+        android:background="#673AB7"
+        android:backgroundTint="#673AB7"
+        android:gravity="center"
+        android:text="REGISTRO ENTRENAMIENTOS"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/list1_registro_entrenamientos"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/boton_ver_registro_entrenamientos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label1_registro_entrenamientos" />
 </androidx.constraintlayout.widget.ConstraintLayout>

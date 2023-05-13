@@ -36,16 +36,7 @@
             android:name=".RegistroEntrenamientosActivity"
             android:exported="false" />
         <activity
-            android:name=".EntrenamientoDatosActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EntrenamientosActivity"
-            android:exported="false" />
-        <activity
             android:name=".RegistroEntrenamientosDatosActivity"
-            android:exported="false" />
-        <activity
-            android:name=".InicioEntrenos"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
