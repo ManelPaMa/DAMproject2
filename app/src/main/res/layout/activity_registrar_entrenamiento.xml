@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".RegistrarEntrenamientoActivity">
 
     <Button
@@ -13,10 +14,11 @@
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="32dp"
+        android:background="@drawable/button_style2"
         android:text="registrar"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="20sp"
-        app:backgroundTint="#673AB7"
+        app:backgroundTint="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/boton_volver_registrar_entrenamiento"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -26,17 +28,24 @@
         android:id="@+id/caja1_registrar_entrenamiento"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="24dp"
-        android:ems="10"
         android:hint="Introduce deporte"
         android:inputType="textPersonName"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/label1_registrar_entrenamiento" />
+        app:layout_constraintTop_toBottomOf="@+id/label1_registrar_entrenamiento"
+        android:padding="15dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="#90ffffff"
+        android:drawablePadding="10dp"
+        android:ems="10"
+
+        />
 
     <EditText
         android:id="@+id/caja2_registrar_entrenamiento"
@@ -60,14 +69,14 @@
     <TextView
         android:id="@+id/label1_registrar_entrenamiento"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="24dp"
-        android:background="#673AB7"
+        android:background="@drawable/button_style3"
         android:gravity="center"
         android:text="REGISTRAR ENTRENAMIENTO"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -80,10 +89,11 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
+        android:background="@drawable/button_style2"
         android:text="volver"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="20sp"
-        app:backgroundTint="#673AB7"
+        app:backgroundTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
