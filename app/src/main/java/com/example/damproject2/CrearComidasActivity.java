@@ -312,6 +312,7 @@ public class CrearComidasActivity extends AppCompatActivity {
                                     deleteOneFood(position,fecha,typeMeal);
                                     Toast.makeText(CrearComidasActivity.this, "El alimento se a eliminado correctamente de la comida", Toast.LENGTH_SHORT).show();
                                     Intent reset = new Intent(CrearComidasActivity.this, CrearComidasActivity.class);
+                                    reset.putExtra("fecha",fecha);
                                     startActivity(reset);
                                 } catch (Exception e) {
                                     Toast.makeText(CrearComidasActivity.this, "Algo salió mal por favor vuelva a intentarlo", Toast.LENGTH_SHORT).show();
